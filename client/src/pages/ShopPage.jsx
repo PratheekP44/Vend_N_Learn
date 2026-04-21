@@ -26,13 +26,13 @@ const ShopPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/products');
+                const res = await fetch('https://vend-n-learn.onrender.com/api/products');
                 const data = await res.json();
                 setProducts(data);
                 setFiltered(data);
 
                 if (user && token) {
-                    const wishRes = await fetch('http://localhost:5000/api/users/wishlist', {
+                    const wishRes = await fetch('https://vend-n-learn.onrender.com/api/users/wishlist', {
                         headers: { 'Authorization': `Bearer ${token}` }
                     });
                     if (wishRes.ok) {
@@ -55,7 +55,7 @@ const ShopPage = () => {
             return;
         }
         try {
-            const res = await fetch(`http://localhost:5000/api/users/wishlist/${productId}`, {
+            const res = await fetch(`https://vend-n-learn.onrender.com/api/users/wishlist/${productId}`, {
                 method: 'PUT',
                 headers: { 'Authorization': `Bearer ${token}` }
             });

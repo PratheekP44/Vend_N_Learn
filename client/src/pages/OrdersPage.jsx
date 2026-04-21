@@ -14,7 +14,7 @@ const OrdersPage = () => {
     useEffect(() => {
         const fetchOrders = async () => {
             try {
-                const res = await fetch('http://localhost:5000/api/orders', {
+                const res = await fetch('https://vend-n-learn.onrender.com/api/orders', {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 if (res.ok) {

@@ -22,7 +22,7 @@ const ProductDetailsPage = () => {
 
     const fetchData = async () => {
         try {
-            const res = await fetch(`http://localhost:5000/api/products/${id}`);
+            const res = await fetch(`https://vend-n-learn.onrender.com/api/products/${id}`);
             if (res.ok) {
                 const data = await res.json();
                 setProduct(data);
@@ -60,7 +60,7 @@ const ProductDetailsPage = () => {
         }
         setSubmittingReview(true);
         try {
-            const res = await fetch(`http://localhost:5000/api/products/${id}/reviews`, {
+            const res = await fetch(`https://vend-n-learn.onrender.com/api/products/${id}/reviews`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
